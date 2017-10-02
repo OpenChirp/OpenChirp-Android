@@ -5,19 +5,25 @@ package io.android.openchirp;
  */
 
 public class User {
-    String device_name;
-    String device_enable;
+    String name;
+    boolean checked;
 
-    public User(String device_name, String device_enable) {
-        this.device_name=device_name;
-        this.device_enable=device_enable;
+    public User(String name, boolean checked) {
+        this.name=name;
+        this.checked=checked;
     }
 
-    public String getName() {
-        return device_name;
+
+    public String getName(){
+        return name;
     }
-    public String getEnable() {
-        return device_enable;
+
+    public boolean isChecked(){
+        return checked;
+    }
+
+    public void toggleChecked(){
+        checked = !checked;
     }
 
 }

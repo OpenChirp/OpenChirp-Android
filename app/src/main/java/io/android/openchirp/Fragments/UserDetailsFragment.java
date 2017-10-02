@@ -41,7 +41,7 @@ public class UserDetailsFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_user_details, container, false);
         TextView set_name = (TextView)v.findViewById(R.id.set_name);
-        TextView set_email = (TextView)v.findViewById(R.id.set_email);
+        TextView set_email = (TextView)v.findViewById(R.id.device_type_1);
 
         try
         {

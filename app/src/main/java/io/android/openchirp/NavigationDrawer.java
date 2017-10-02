@@ -19,6 +19,8 @@ import android.widget.TextView;
 import io.android.openchirp.Fragments.BaseFragment;
 import io.android.openchirp.Fragments.MyDevicesFragment;
 import io.android.openchirp.Fragments.MyGroupsFragment;
+import io.android.openchirp.Fragments.MyLocationsFragment;
+import io.android.openchirp.Fragments.MyServicesFragment;
 import io.android.openchirp.Fragments.UserDetailsFragment;
 import io.android.openchirp.R;
 
@@ -101,31 +103,39 @@ public class NavigationDrawer extends AppCompatActivity
 
         if (id == R.id.nav_home)
         {
+            this.setTitle("About Us");
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.base_frame, new BaseFragment()).replace(R.id.base_frame, new BaseFragment()).commit();
         }
         else if (id == R.id.nav_user_details)
         {
+            this.setTitle("User Details");
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.base_frame, new UserDetailsFragment()).replace(R.id.base_frame, new UserDetailsFragment()).commit();
         }
         else if (id == R.id.nav_devices)
         {
+            this.setTitle("My Devices");
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.base_frame, new MyDevicesFragment()).replace(R.id.base_frame, new MyDevicesFragment()).commit();
         }
         else if (id == R.id.nav_groups)
         {
+            this.setTitle("My Groups");
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.base_frame, new MyGroupsFragment()).replace(R.id.base_frame, new MyGroupsFragment()).commit();
         }
         else if (id == R.id.nav_locations)
         {
-
+            this.setTitle("My Locations");
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.base_frame, new MyLocationsFragment()).replace(R.id.base_frame, new MyLocationsFragment()).commit();
         }
         else if (id == R.id.nav_services)
         {
-
+            this.setTitle("My Services");
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.base_frame, new MyServicesFragment()).replace(R.id.base_frame, new MyServicesFragment()).commit();
         }
         else if (id == R.id.nav_sign_out)
         {

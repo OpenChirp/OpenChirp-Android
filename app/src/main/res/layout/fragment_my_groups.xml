@@ -5,11 +5,58 @@
     tools:context="io.android.openchirp.Fragments.MyGroupsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/groups_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Groups: NULL" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/groups_view"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Groups " />
+
+        <TextView
+            android:id="@+id/group_name_1"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/groups_view"
+            android:gravity="center"
+            android:text="test_group" />
+
+        <TextView
+            android:id="@+id/group_access"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/group_access_1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/groups_view"
+            android:gravity="center"
+            android:text="Write Access" />
+
+        <TextView
+            android:id="@+id/group_access_1"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/group_name_1"
+            android:layout_below="@+id/groups_view"
+            android:layout_toEndOf="@+id/groups_view"
+            android:layout_toRightOf="@+id/groups_view"
+            android:gravity="center"
+            android:text="true" />
+
+        <TextView
+            android:id="@+id/nil"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
 
 </FrameLayout>

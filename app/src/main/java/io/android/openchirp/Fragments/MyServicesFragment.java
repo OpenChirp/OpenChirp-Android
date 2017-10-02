@@ -12,10 +12,10 @@ import io.android.openchirp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyServices extends Fragment {
+public class MyServicesFragment extends Fragment {
 
 
-    public MyServices() {
+    public MyServicesFragment() {
         // Required empty public constructor
     }
 

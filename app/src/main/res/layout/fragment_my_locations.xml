@@ -2,12 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.android.openchirp.Fragments.MyLocations">
+    tools:context="io.android.openchirp.Fragments.MyLocationsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="Locations haven't been updated yet"
+        android:textSize="16sp" />
 
 </FrameLayout>

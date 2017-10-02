@@ -18,7 +18,10 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="Name: " />
+            android:text="NAME "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/email_view"
@@ -26,30 +29,39 @@
             android:layout_height="50dp"
             android:layout_below="@+id/name_view"
             android:gravity="center"
-            android:text="Email: " />
+            android:text="EMAIL "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/set_name"
             android:layout_width="230dp"
             android:layout_height="50dp"
+            android:layout_above="@+id/device_type_1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@+id/name_view"
+            android:layout_toRightOf="@+id/name_view"
             android:gravity="center"
             android:text="NULL"
-            android:layout_above="@+id/set_email"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/name_view"
-            android:layout_toEndOf="@+id/name_view" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/set_email"
+            android:id="@+id/device_type_1"
             android:layout_width="230dp"
             android:layout_height="50dp"
+            android:layout_alignBottom="@+id/email_view"
+            android:layout_below="@+id/name_view"
+            android:layout_toEndOf="@+id/name_view"
+            android:layout_toRightOf="@+id/name_view"
             android:gravity="center"
             android:text="NULL "
-            android:layout_alignBottom="@+id/email_view"
-            android:layout_toRightOf="@+id/name_view"
-            android:layout_toEndOf="@+id/name_view"
-            android:layout_below="@+id/name_view" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/nil"

@@ -13,7 +13,6 @@ public class User {
         this.checked=checked;
     }
 
-
     public String getName(){
         return name;
     }

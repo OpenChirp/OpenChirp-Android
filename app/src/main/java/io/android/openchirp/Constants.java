@@ -16,14 +16,14 @@ import android.util.Log;
     String getIDToken(Context mContext){
         SharedPreferences preferences = mContext.getSharedPreferences("openchirp", Context.MODE_PRIVATE);
         String id_token = preferences.getString("id_token", "0");
-        Log.d(TAG+TAG, id_token);
+        Log.d(TAG, id_token);
         return id_token;
     }
 
     String getCookie(Context mContext){
         SharedPreferences preferences = mContext.getSharedPreferences("openchirp", Context.MODE_PRIVATE);
         String cookie = preferences.getString("cookie", "0");
-        Log.d(TAG, cookie);
+        Log.d("Cookie Test: ", cookie);
         return cookie;
     }
 

@@ -40,8 +40,8 @@ public class UserDetailsFragment extends Fragment {
         String url = "http://openchirp.andrew.cmu.edu:7000/api/user";
 
         View v = inflater.inflate(R.layout.fragment_user_details, container, false);
-        TextView set_name = (TextView)v.findViewById(R.id.set_name);
-        TextView set_email = (TextView)v.findViewById(R.id.device_type_1);
+        TextView set_name = (TextView)v.findViewById(R.id.name);
+        TextView set_email = (TextView)v.findViewById(R.id.email);
 
         try
         {
@@ -55,15 +55,7 @@ public class UserDetailsFragment extends Fragment {
             Log.d(TAG, resp.toString());
 
         }
-        catch (ExecutionException e)
-        {
-            e.printStackTrace();
-        }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-        }
-        catch (JSONException e)
+        catch (ExecutionException | JSONException | InterruptedException e)
         {
             e.printStackTrace();
         }

@@ -43,12 +43,23 @@ public class OpenChirpHelper {
         return resp_json;
     }
 
+    public JSONObject PostOpenChirp_New(String url_post, JSONObject postMessage, Context mContext) throws ExecutionException, InterruptedException, JSONException {
+        url = url_post;
+        postData = postMessage;
+        cookie = constants.getCookie(mContext);
+        postAsync_New postObject = new postAsync_New();
+        String response = postObject.execute().get();
+        JSONObject resp_json = new JSONObject(response);
+        return resp_json;
+    }
+
     public JSONObject GetOpenChirp_Object(String url_get, Context mContext) throws ExecutionException, InterruptedException, JSONException {
         url = url_get;
         idToken = constants.getIDToken(mContext);
         cookie = constants.getCookie(mContext);
 
         getAsync getObject = new getAsync();
+        Log.d("getObject", getObject.toString());
         String response = getObject.execute().get();
         JSONObject resp_json = new JSONObject(response);
         Log.d(TAG, response);
@@ -80,7 +91,6 @@ public class OpenChirpHelper {
                 HttpURLConnection conn = (HttpURLConnection) requestUrl.openConnection();
                 conn.setRequestMethod("GET");
                 conn.setRequestProperty("cookie", cookie);
-//                conn.setRequestProperty("id_token", idToken);
                 conn.setRequestProperty("Content-length", "0");
                 conn.setUseCaches(false);
                 conn.setAllowUserInteraction(false);
@@ -153,6 +163,60 @@ public class OpenChirpHelper {
                     return sb.toString();
                 }
                 else {
+                    return "false : " + responseCode;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return String.valueOf(sb);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            Log.d("Post", "Finished");
+            return;
+        }
+    }
+
+    private class postAsync_New extends AsyncTask<Void, Void, String> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            StringBuilder sb = new StringBuilder();
+            try {
+                URL requestUrl = new URL(url);
+                HttpURLConnection conn = (HttpURLConnection) requestUrl.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-type", "application/json");
+                conn.setRequestProperty("cookie", cookie);
+                conn.setUseCaches(false);
+                conn.setDoOutput(true);
+                conn.setAllowUserInteraction(false);
+                conn.setConnectTimeout(100000);
+                conn.setReadTimeout(100000);
+
+                PrintWriter out = new PrintWriter(conn.getOutputStream());
+                out.print(postData);
+                out.close();
+
+                conn.connect();
+
+                int responseCode = conn.getResponseCode();
+                Log.d("Post", String.valueOf(responseCode));
+
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+
+                    Scanner inStream = new Scanner(conn.getInputStream());
+
+                    while (inStream.hasNextLine())
+                        sb.append(inStream.nextLine());
+                    return sb.toString();
+                } else {
                     return "false : " + responseCode;
                 }
             } catch (Exception e) {

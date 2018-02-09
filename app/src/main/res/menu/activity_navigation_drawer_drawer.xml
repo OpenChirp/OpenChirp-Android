@@ -3,6 +3,14 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_shortcuts"
+            android:icon="@drawable/devices"
+            android:title="My Shortcuts" />
+        <item
+            android:id="@+id/nav_new"
+            android:icon="@drawable/image_new"
+            android:title="New" />
+        <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
             android:title="About Us" />
@@ -14,6 +22,10 @@
             android:id="@+id/nav_devices"
             android:icon="@drawable/devices"
             android:title="My Devices" />
+        <item
+            android:id="@+id/nav_create_device"
+            android:icon="@drawable/devices"
+            android:title="Create Device" />
         <item
             android:id="@+id/nav_groups"
             android:icon="@drawable/groups"

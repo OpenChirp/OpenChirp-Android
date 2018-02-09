@@ -17,10 +17,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import io.android.openchirp.Fragments.BaseFragment;
+import io.android.openchirp.Fragments.CreateDeviceFragment;
 import io.android.openchirp.Fragments.MyDevicesFragment;
 import io.android.openchirp.Fragments.MyGroupsFragment;
 import io.android.openchirp.Fragments.MyLocationsFragment;
 import io.android.openchirp.Fragments.MyServicesFragment;
+import io.android.openchirp.Fragments.MyShortcutsFragment;
+import io.android.openchirp.Fragments.NewFragment;
 import io.android.openchirp.Fragments.UserDetailsFragment;
 import io.android.openchirp.R;
 
@@ -58,7 +61,7 @@ public class NavigationDrawer extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 //        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        fragmentTransaction.add(R.id.base_frame, new BaseFragment()).replace(R.id.base_frame, new BaseFragment()).commit();
+//        fragmentTransaction.add(R.id.base_frame, image_new BaseFragment()).replace(R.id.base_frame, image_new BaseFragment()).commit();
 
     }
 
@@ -101,7 +104,20 @@ public class NavigationDrawer extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home)
+//        if (id == R.id.nav_new)
+//        {
+//            this.setTitle("LoRaBug Provisioning");
+//            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.add(R.id.base_frame, new NewFragment()).replace(R.id.base_frame, new NewFragment()).commit();
+//        }
+
+        if (id == R.id.nav_shortcuts)
+        {
+            this.setTitle("My Shortcuts");
+            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.base_frame, new BaseFragment()).replace(R.id.base_frame, new MyShortcutsFragment()).commit();
+        }
+        else if (id == R.id.nav_home)
         {
             this.setTitle("About Us");
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -119,6 +135,12 @@ public class NavigationDrawer extends AppCompatActivity
             fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.base_frame, new MyDevicesFragment()).replace(R.id.base_frame, new MyDevicesFragment()).commit();
         }
+//        else if (id == R.id.nav_create_device)
+//        {
+//            this.setTitle("Create Device");
+//            fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.add(R.id.base_frame, new CreateDeviceFragment()).replace(R.id.base_frame, new CreateDeviceFragment()).commit();
+//        }
         else if (id == R.id.nav_groups)
         {
             this.setTitle("My Groups");

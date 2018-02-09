@@ -130,7 +130,7 @@ public class SignInActivity extends AppCompatActivity implements
 //            // this asynchronous branch will attempt to sign in the user silently.  Cross-device
 //            // single sign-on will occur in this branch.
 //            showProgressDialog();
-//            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+//            opr.setResultCallback(image_new ResultCallback<GoogleSignInResult>() {
 //                @Override
 //                public void onResult(GoogleSignInResult googleSignInResult) {
 //                    hideProgressDialog();
